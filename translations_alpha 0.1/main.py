@@ -4,6 +4,7 @@ from function.translators import translator
 from tkinter import messagebox as mes
 from function.history import history_page
 import datetime as dt
+from log_in import login
 
 class main_thing:
     def __init__(self, main: tk.Tk):
@@ -54,6 +55,7 @@ class main_thing:
 
                                   command=lambda: mes.showinfo(title='注意事项', message='{}'.format(self.about)))
         self.menu_bar.add_command(label='history',command=self.history_pages)
+        self.menu_bar.add_command(label='登陆',command=lambda :login(self.main,self.menu_bar))
 
     def history_pages(self):
         history_page(main=self.main,main_page=self.main_page,menu=self.menu_bar)
